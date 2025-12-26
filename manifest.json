@@ -1,13 +1,13 @@
 {
   "name": "snatcha",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Upgrade your designs with our browser extension! Download premium SVG icons and stickers.",
   "manifest_version": 3,
   "icons": {
-    "32": "./icons/32.png",
-    "48": "./icons/48.png",
-    "128": "./icons/128.png",
-    "256": "./icons/256.png"
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png",
+    "256": "icons/256.png"
   },
   "content_scripts": [
     {
@@ -17,14 +17,18 @@
         "https://icons8.com/*",
         "https://fontawesome.com/*"
       ],
-      "js": [
-        "./scripts/snatcha-jquery.js",
-        "./scripts/snatcha-assets.js",
-        "./scripts/snatcha-snackbar.js",
-        "./scripts/snatcha-main.js"
-      ],
+      "js": ["scripts/content.js"],
       "run_at": "document_idle",
-      "all_frames": true
+      "all_frames": false
     }
-  ]
+  ],
+  "host_permissions": [
+    "https://www.flaticon.com/*",
+    "https://iconscout.com/*",
+    "https://icons8.com/*",
+    "https://fontawesome.com/*",
+    "https://api-icons.icons8.com/*",
+    "https://site-assets.fontawesome.com/*"
+  ],
+  "permissions": ["storage"]
 }
